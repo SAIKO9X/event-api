@@ -16,4 +16,53 @@ public record Event(
   LocalDateTime end,
   EventType eventType
 ) {
+
+  // Factory Method para CREATE
+  public static Event create(
+    String name,
+    String description,
+    String location,
+    int capacity,
+    LocalDateTime start_time,
+    LocalDateTime end_time,
+    String organizer,
+    String identifier,
+    EventType eventType
+  ) {
+    return new Event(
+      null,
+      name,
+      description,
+      location,
+      organizer,
+      identifier,
+      capacity,
+      start_time,
+      end_time,
+      eventType
+    );
+  }
+
+  // Factory Method para UPDATE
+  public Event update(
+    String name,
+    String description,
+    String location,
+    int capacity,
+    LocalDateTime start,
+    LocalDateTime end
+  ) {
+    return new Event(
+      this.id,
+      name,
+      description,
+      location,
+      this.organizer,
+      this.identifier,
+      capacity,
+      start,
+      end,
+      this.eventType
+    );
+  }
 }

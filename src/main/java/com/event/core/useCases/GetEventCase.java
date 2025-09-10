@@ -2,7 +2,7 @@ package com.event.core.useCases;
 
 import com.event.core.entities.Event;
 
-public interface getEventCase {
+public interface GetEventCase {
 
-  Event execute(Long eventId);
+  Event execute(Long id);
 }
